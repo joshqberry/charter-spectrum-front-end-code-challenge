@@ -24,25 +24,64 @@ import App from "./App.css"
     }, []); // ends useEffect
 
   return (
-      <div>
+      <div className="data-container">
         <h1>These are the listings</h1>
         <ul>
         {
           listings.map((listing, index) => {
             return ( <div
-              key={'${listing.name}'}>
-              {listing.name}
-              {listing.city}
-              {listing.state}
-              {listing.telephone}
-              {listing.genre}
+              index={index}>
+              <ul>
+                   <li className="restaurantName">
+                    <h5>{listing.name}</h5>
+                   </li>
+                   <li className="restaurantCity">
+                     <h5>{listing.city}</h5>
+                   </li>
+                   <li className="restaurantState">
+                     <h4>{listing.state}</h4>
+                   </li>
+                   <li className="restaurantTelephone">
+                     <p>{listing.telephone}</p>
+                   </li>
+                   <li className="restaurantGenre">
+                     <p>{listing.genre}</p>
+                   </li>
+               </ul>
             </div> )
           }) //ends map function
-        } // ends JSX wrapper
+        } 
         </ul>
       </div>
     ); // ends return
   }; // end RestaurantListingFetcher function
+
+
+  const Resty = ({ name, city, state, telephone, genre }) => {
+  if (!name) return <div />;
+  return (
+    <div>
+       <ul>
+            <li className="restaurantName">
+             <h5>{name}</h5>
+            </li>
+            <li className="restaurantCity">
+              <h5>{city}</h5>
+            </li>
+            <li className="restaurantState">
+              <h4>{state}</h4>
+            </li>
+            <li className="restaurantTelephone">
+              <p>{telephone}</p>
+            </li>
+            <li className="restaurantGenre">
+              <p>{genre}</p>
+            </li>
+        </ul>
+      </div>
+    );
+  };
+
 
 
 export { RestaurantListingFetcher };
