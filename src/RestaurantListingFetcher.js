@@ -15,7 +15,12 @@ import App from "./App.css"
 
         const jsonResponse = await response.json();
 
-        setListings(jsonResponse);
+        let sortedJSONResponse = jsonResponse.sort(function (restaurantNameA, restaurantNameB) {
+          if (restaurantNameA.name > restaurantNameB.name) return 1;
+          if (restaurantNameA.name < restaurantNameB.name) return -1;
+        })
+
+        setListings(sortedJSONResponse);
 
       } // ends getListings
 
