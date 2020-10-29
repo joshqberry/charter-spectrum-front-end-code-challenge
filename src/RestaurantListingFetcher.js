@@ -60,7 +60,7 @@ import App from "./App.css"
                     <h4>{listing.telephone}</h4>
                   </li>
                   <li className="restaurantGenre">
-                    <h4>{listing.genre}</h4>
+                    <h4>{listing.genre.replace(/,/g, ', ')}</h4>
                   </li>
                 </ul>
               </div> )
