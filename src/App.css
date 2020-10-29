@@ -37,3 +37,10 @@ li {
     border: 1px solid pink;
     vertical-align: middle;
 }
+
+li.tableHeader {
+    display: table-cell;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+}
