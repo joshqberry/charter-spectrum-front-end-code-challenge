@@ -13,7 +13,7 @@ import App from "./App.css"
           headers: {Authorization: process.env.REACT_APP_RESTAURANT_LISTINGS_API_KEY},
         });
 
-        const jsonResponse = await response.json();
+        let jsonResponse = await response.json();
 
         let sortedJSONResponse = jsonResponse.sort(function (restaurantNameA, restaurantNameB) {
           if (restaurantNameA.name > restaurantNameB.name) return 1;
@@ -22,11 +22,11 @@ import App from "./App.css"
 
         setListings(sortedJSONResponse);
 
-      } // ends getListings
+      } // ends getListings function
 
       getListings();
 
-    }, []); // ends useEffect
+    }, []); // ends useEffect function
 
     return (
       <div className="data-container">
@@ -74,6 +74,6 @@ import App from "./App.css"
         </ul>
       </div>
     ); // ends return
-  }; // end RestaurantListingFetcher function
+  }; // ends RestaurantListingFetcher function
 
 export { RestaurantListingFetcher };
