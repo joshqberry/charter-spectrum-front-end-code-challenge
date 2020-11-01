@@ -29,12 +29,33 @@ import App from "./App.css"
 
     }, []); // ends useEffect function
 
+
     return (
       <div>
-        {statesForTableFilter}
+        {statesForTableFilter.map((filterOptionForState, index) => {
+          return (
+              <CheckboxesForStateFilter
+                index={index}
+                state={filterOptionForState}
+              />
+          ); // ends return
+        })}; // ends map function
       </div>
-  ); // ends return
-}; // ends FetchStatesForTableFilter function
+    ); // ends return
+
+  }; // ends FetchStatesForTableFilter function
+
+
+  const CheckboxesForStateFilter = ({ state }) => {
+    return (
+      <div className="checkboxDiv">
+        <label>
+          <input type="checkbox" rel={state} className="stateCheckboxes"/>
+          <h5 className="thisStateIsVisible">{state}</h5>
+        </label>
+      </div>
+    ); // ends return
+  }; // ends CheckboxesForStateFilter function
 
 
 export { FetchStatesForTableFilter };
