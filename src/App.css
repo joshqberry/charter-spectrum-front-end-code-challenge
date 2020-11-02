@@ -44,3 +44,17 @@ li.tableHeader {
     border: none;
     vertical-align: middle;
 }
+
+div.checkboxDiv {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.stateOption {
+  margin: 0;
+}
+
+.wrapper {
+    padding: 20px;
+    font-size: 20px;
+}

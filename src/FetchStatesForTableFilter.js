@@ -39,7 +39,7 @@ import App from "./App.css"
                 state={filterOptionForState}
               />
           ); // ends return
-        })}; // ends map function
+        })}
       </div>
     ); // ends return
 
@@ -51,7 +51,7 @@ import App from "./App.css"
       <div className="checkboxDiv">
         <label>
           <input type="checkbox" rel={state} className="stateCheckboxes"/>
-          <h5 className="thisStateIsVisible">{state}</h5>
+          <h5 className="stateOption">{state}</h5>
         </label>
       </div>
     ); // ends return

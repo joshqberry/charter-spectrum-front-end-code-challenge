@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import App from "./App.css"
 
-  const RestaurantListingFetcher = () => {
+  function useRestaurantListingFetcher() {
 
     const [listings, setListings] = useState([]);
 
@@ -28,52 +28,8 @@ import App from "./App.css"
 
     }, []); // ends useEffect function
 
-    return (
-      <div className="data-container">
-        <ul>
-          <li className="tableHeader">
-            <h2>Restaurant name</h2>
-          </li>
-          <li className="tableHeader">
-            <h2>City</h2>
-          </li>
-          <li className="tableHeader">
-            <h2>State</h2>
-          </li>
-          <li className="tableHeader">
-            <h2>Telephone number</h2>
-          </li>
-          <li className="tableHeader">
-            <h2>Genre</h2>
-          </li>
-        </ul>
-        <ul>
-          {listings.map((listing, index) => {
-            return (
-              <div index={index}>
-                <ul>
-                  <li className="restaurantName">
-                    <h4>{listing.name}</h4>
-                 </li>
-                 <li className="restaurantCity">
-                    <h4>{listing.city}</h4>
-                  </li>
-                  <li className="restaurantState">
-                    <h4>{listing.state}</h4>
-                  </li>
-                  <li className="restaurantTelephone">
-                    <h4>{listing.telephone}</h4>
-                  </li>
-                  <li className="restaurantGenre">
-                    <h4>{listing.genre.replace(/,/g, ', ')}</h4>
-                  </li>
-                </ul>
-              </div> )
-            }) //ends map function
-          }
-        </ul>
-      </div>
-    ); // ends return
+    return listings;
+
   }; // ends RestaurantListingFetcher function
 
-export { RestaurantListingFetcher };
+export { useRestaurantListingFetcher };

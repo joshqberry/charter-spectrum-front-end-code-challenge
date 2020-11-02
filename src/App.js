@@ -1,21 +1,23 @@
 import React from "react";
 import './App.css';
-import { RestaurantListingFetcher } from "./RestaurantListingFetcher";
 import { FetchStatesForTableFilter } from "./FetchStatesForTableFilter";
 import { FetchGenresForTableFilter } from "./FetchGenresForTableFilter";
-
+import { RestaurantListings } from "./RestaurantListings";
 
 function App() {
   return (
+
     <div className="App">
+    <div>
+      <FetchGenresForTableFilter />
+    </div>
+    <br>
+    </br>
     <div>
       <FetchStatesForTableFilter />
     </div>
     <div>
-      <FetchGenresForTableFilter />
-    </div>
-    <div>
-      <RestaurantListingFetcher />
+      <RestaurantListings />
     </div>
     </div>
   );
